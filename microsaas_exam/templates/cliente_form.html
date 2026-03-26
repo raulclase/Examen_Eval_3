@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="title">{{ 'Editar cliente' if cliente else 'Nuevo cliente' }}</h1>
+  <div class="card">
+    <form method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" value="{{ cliente[1] if cliente else '' }}" required>
+      <input type="email" name="email" placeholder="Email" value="{{ cliente[2] if cliente else '' }}" required>
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+{% endblock %}

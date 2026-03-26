@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="title">Pedidos</h1>
+  <p><a href="{{ url_for('pedido_add') }}" class="btn">➕ Nuevo pedido</a></p>
+  <table>
+    <tr><th>ID</th><th>Cliente</th><th>Fecha</th><th>Acciones</th></tr>
+    {% for p in pedidos %}
+    <tr>
+      <td>{{ p[0] }}</td>
+      <td>{{ p[1] }}</td>
+      <td>{{ p[2] }}</td>
+      <td class="actions">
+        <a href="{{ url_for('pedido_delete', id=p[0]) }}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

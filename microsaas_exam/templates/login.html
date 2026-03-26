@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Raúl S.A.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="login">
+    <div class="box">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width:120px">
+      <h2 class="title">Raúl S.A. | microsaas</h2>
+      {% if error %}<p style="color:#d33">{{ error }}</p>{% endif %}
+      <form method="POST" action="{{ url_for('do_login') }}">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
